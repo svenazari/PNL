@@ -17,9 +17,10 @@ def prime():
       a1 = int(a)
     except ValueError: #if first input is not an integer do check for float
       try:
-        af = float(a)
+        ae = a.replace(',','.')
+        af = float(ae)
       except ValueError: #if first value cannot be converted to float
-        print("Numbers only! '" + a + "' is not valid number. (Use decimal point instead coma.)")
+        print("Numbers only! '" + a + "' is not number.")
         exit()
       else:
         a1 = math.ceil(af) #round to first bigger integer
@@ -27,13 +28,14 @@ def prime():
       b1 = int(b)
     except ValueError: #if second input is not an integer do check for float
       try:
-        bf = float(b)
+        be = b.replace(',','.')
+        bf = float(be)
       except ValueError: #if second value cannot be converted to float
-        print("Numbers only! '" + b + "' is not valid number. (Use decimal point instead coma.)")
+        print("Numbers only! '" + b + "' is not number.")
         exit()
       else:
         b1 = math.floor(bf) #round to first smaller integer
-    if float(b) < float(a): #if second number is smaller
+    if float(be) < float(ae): #if second number is smaller
       print ("Second number must be larger than first!")
       exit()
     elif a1 < 3: #0, 1 and 2 are not considered primes (2 is nor prime nor composit number) so they are omitted from this test
@@ -61,5 +63,6 @@ def prime():
 
 prime() #call function
 
-#version2: range can also be defined with decimal numbers
-#version1: range can only be defined with integers
+#version 3: numbers with coma can also be converted to float
+#version 2: range can also be defined with decimal numbers
+#version 1: range can only be defined with integers
