@@ -14,28 +14,20 @@ def prime():
   primel = [] #list to store primes
   try:
     try:
-      a1 = int(a)
-    except ValueError: #if first input is not an integer do check for float
-      try:
-        ae = a.replace(',','.')
-        af = float(ae)
-      except ValueError: #if first value cannot be converted to float
-        print("Numbers only! '" + a + "' is not number.")
-        exit()
-      else:
-        a1 = math.ceil(af) #round to first bigger integer
+      af = float(a.replace(',','.'))
+    except ValueError: #if first value cannot be converted to float
+      print("Numbers only! '" + a + "' is not number.")
+      exit()
+    else:
+      a1 = math.ceil(af) #round to first bigger integer
     try:  
-      b1 = int(b)
-    except ValueError: #if second input is not an integer do check for float
-      try:
-        be = b.replace(',','.')
-        bf = float(be)
-      except ValueError: #if second value cannot be converted to float
-        print("Numbers only! '" + b + "' is not number.")
-        exit()
-      else:
-        b1 = math.floor(bf) #round to first smaller integer
-    if float(be) < float(ae): #if second number is smaller
+      bf = float(b.replace(',','.'))
+    except ValueError: #if second value cannot be converted to float
+      print("Numbers only! '" + b + "' is not number.")
+      exit()
+    else:
+      b1 = math.floor(bf) #round to first smaller integer
+    if bf < af: #if second number is smaller
       print ("Second number must be larger than first!")
       exit()
     elif a1 < 3: #0, 1 and 2 are not considered primes (2 is nor prime nor composit number) so they are omitted from this test
