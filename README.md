@@ -7,7 +7,7 @@ Made by Sven Azari
 
 http://www.github.com/svenazari
 
-version 4: small adjustments to output lines<br>
-version 3: decimal numbers with coma instead of decimal point can also be converted to float<br>
-version 2: range can also be defined with decimal numbers<br>
-version 1: range can only be defined with integers<br>
+Version 4: Small adjustments to output lines<br>
+Version 3: Decimal numbers with coma instead of decimal point can also be converted to float<br>
+Version 2: Range can also be defined with decimal numbers<br>
+Version 1: Range can only be defined with integers<br>
