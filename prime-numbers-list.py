@@ -54,6 +54,7 @@ def prime():
       print("There are no prime numbers in range from " + a + " to " + b + ".") #if there are no primes in tested range (if length of list is 0)
     elif len(primel) == 1:
       print ("\033[A                             \033[A") #delate "Please wait" line
+      print("* * *")
       print("There is only one prime number in range from " + a + " to " + b + ". It is " + ", ".join(primel) + ".") #if there is only one prime number in range
     else:
       print ("\033[A                             \033[A") #delate "Please wait" line
