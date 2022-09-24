@@ -12,6 +12,7 @@ def prime():
   a = input("FROM: ")
   b = input("TO: ")
   primel = [] #list to store primes
+  print("Please wait. Calculating...")
   try:
     try:
       af = float(a.replace(',','.'))
@@ -44,17 +45,24 @@ def prime():
       else:
         continue
   except KeyboardInterrupt: #if user aborts calculation
+    print ("\033[A                             \033[A") #delate "Please wait" line
     print ("\n" + "ABORTED BY USER!")
   else:
     if len(primel) == 0: #test length of list of primes
+      print ("\033[A                             \033[A") #delate "Please wait" line
       print("* * *")
       print("There are no prime numbers in range from " + a + " to " + b + ".") #if there are no primes in tested range (if length of list is 0)
+    elif len(primel) == 1:
+      print ("\033[A                             \033[A") #delate "Please wait" line
+      print("There is only one prime number in range from " + a + " to " + b + ". It is " + ", ".join(primel) + ".") #if there is only one prime number in range
     else:
+      print ("\033[A                             \033[A") #delate "Please wait" line
       print("* * *")
-      print("Prime numbers in range from " + a + " to " + b + " are: " + ", ".join(primel) + ".") #if there are primes in tested range
+      print("There are " + str(len(primel)) + " prime numbers in range from " + a + " to " + b + ". They are: " + ", ".join(primel) + ".") #if there are primes in tested range
 
 prime() #call function
 
-#version 3: numbers with coma can also be converted to float
+#version 4: small adjustments to output lines
+#version 3: decimal numbers with coma instead of decimal point can also be converted to float
 #version 2: range can also be defined with decimal numbers
 #version 1: range can only be defined with integers
